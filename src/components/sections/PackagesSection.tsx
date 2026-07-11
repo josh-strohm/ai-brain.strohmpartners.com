@@ -8,7 +8,7 @@ const packages = [
   {
     name: "Company Brain Pilot",
     badge: "Best first step",
-    price: "$1,500-$3,500",
+    price: "$1,000-$2,500",
     timeline: "About 2-3 weeks",
     description:
       "One high-friction workflow or role. The right place to start if you want a small, clear first win.",
@@ -24,7 +24,7 @@ const packages = [
   {
     name: "Company Brain Starter Build",
     badge: "Broader first system",
-    price: "$3,500-$7,500",
+    price: "$2,500-$4,500",
     timeline: "About 3-5 weeks",
     description:
       "One department or core operating area. More coverage when you are ready for a wider first build.",
@@ -40,7 +40,7 @@ const packages = [
   {
     name: "Brain Care Lite",
     badge: "After it works",
-    price: "$300-$1,000 / mo",
+    price: "$200-$600 / mo",
     timeline: "Monthly",
     description:
       "Keep the Brain current once it is live and useful. Updates, improvements, and light ongoing support.",
