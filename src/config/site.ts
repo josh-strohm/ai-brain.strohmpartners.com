@@ -10,7 +10,7 @@ export const siteConfig = {
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2lnFVDVF4oKIzE6ZHDeeyE7cLSIGsE79nUYZPvsPWxz8a6Do7nJDVXq1uwyqJVtig3pMaB3tg7?gv=true",
   // PLACEHOLDER: replace before traffic if you still use the form endpoint
   formEndpoint: "", // e.g. https://formspree.io/f/xxxxxx
-  email: "hello@strohmpartners.com", // placeholder
+  email: "hi@strohmpartners.com",
   phone: "", // optional
 };
 

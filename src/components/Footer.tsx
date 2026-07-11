@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { siteConfig } from "@/config/site";
 
@@ -26,29 +27,29 @@ export function Footer() {
             <p className="text-sm font-semibold text-[var(--ink)]">Navigate</p>
             <ul className="mt-3 space-y-2 text-sm text-[var(--ink-muted)]">
               <li>
-<a href="/#problem" className="hover:text-[var(--ink)]">
+                <Link href="/#problem" className="hover:text-[var(--ink)]">
                   The Problem
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#solution" className="hover:text-[var(--ink)]">
+                <Link href="/#solution" className="hover:text-[var(--ink)]">
                   What You Get
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#packages" className="hover:text-[var(--ink)]">
+                <Link href="/#packages" className="hover:text-[var(--ink)]">
                   Packages
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/#faq" className="hover:text-[var(--ink)]">
+                <Link href="/#faq" className="hover:text-[var(--ink)]">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
-                <a href={siteConfig.calendarUrl} className="hover:text-[var(--ink)]">
+                <Link href={siteConfig.calendarUrl} className="hover:text-[var(--ink)]">
                   Book a Fit Call
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -64,9 +65,9 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={siteConfig.calendarUrl} className="hover:text-[var(--ink)]">
+                <Link href={siteConfig.calendarUrl} className="hover:text-[var(--ink)]">
                   Book a Fit Call
-                </a>
+                </Link>
               </li>
               <li className="text-[var(--ink-muted)]">
                 Operated by {siteConfig.operator}

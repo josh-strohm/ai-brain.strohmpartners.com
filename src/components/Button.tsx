@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 
@@ -43,10 +44,22 @@ export function Button(props: ButtonProps) {
 
   const classes = cn(base, variants[variant], sizes[size], className);
 
-  if ("href" in props && props.href) {
+if ("href" in props && props.href) {
     const { href, ...anchorRest } = rest as AnchorHTMLAttributes<HTMLAnchorElement> & {
       href: string;
     };
+
+    const isInternal =
+      href.startsWith("/") || href.startsWith("#");
+
+    if (isInternal) {
+      return (
+        <Link href={href} className={classes} {...anchorRest}>
+          {children}
+        </Link>
+      );
+    }
+
     return (
       <a href={href} className={classes} {...anchorRest}>
         {children}

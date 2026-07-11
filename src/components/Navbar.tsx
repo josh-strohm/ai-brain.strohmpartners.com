@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { navLinks, siteConfig } from "@/config/site";
@@ -12,7 +13,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between gap-4 sm:h-20">
-        <a href="/" className="flex min-w-0 items-center gap-2.5">
+        <Link href="/" className="flex min-w-0 items-center gap-2.5">
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface-raised)] text-sm font-bold text-[var(--accent)]">
             CB
           </span>
@@ -24,17 +25,17 @@ export function Navbar() {
               {siteConfig.brand}
             </span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-[var(--ink-muted)] transition hover:text-[var(--ink)]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -78,15 +79,15 @@ export function Navbar() {
       {open ? (
         <div className="border-t border-[var(--border)] bg-[var(--surface)] md:hidden">
           <Container className="flex flex-col gap-3 py-4">
-            {navLinks.map((link) => (
-              <a
+{navLinks.map((link) => (
+              <Link
                 key={link.href}
                 href={link.href}
                 className="rounded-lg px-2 py-2 text-sm font-medium text-[var(--ink)]"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Button
               href={siteConfig.calendarUrl}
