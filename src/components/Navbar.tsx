@@ -15,7 +15,7 @@ export function Navbar() {
       <Container className="flex h-16 items-center justify-between gap-4 sm:h-20">
         <Link href="/" className="flex min-w-0 items-center gap-2.5">
           <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface-raised)] text-sm font-bold text-[var(--accent)]">
-            CB
+            SP
           </span>
           <span className="min-w-0">
             <span className="block truncate text-sm font-bold text-[var(--ink)]">

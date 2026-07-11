@@ -9,7 +9,7 @@ export function Footer() {
         <div className="max-w-sm">
           <div className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center rounded-[var(--radius-sm)] border border-[var(--border-strong)] bg-[var(--surface-raised)] text-sm font-bold text-[var(--accent)]">
-              CB
+              SP
             </span>
             <div>
               <p className="text-sm font-bold text-[var(--ink)]">{siteConfig.offer}</p>
