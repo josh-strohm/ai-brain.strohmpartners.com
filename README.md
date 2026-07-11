@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Company Brain Starter Landing Page
 
-## Getting Started
+High-converting single-page marketing site for the **Company Brain Starter** offer from Strohm Partners.
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router)
+- TypeScript
+- Tailwind CSS v4
+
+## Quick start
 
 ```bash
+cd web
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+cd web
+npm run build
+npm start
+```
 
-## Learn More
+## Deploy (Vercel)
 
-To learn more about Next.js, take a look at the following resources:
+1. Import the `web` folder (or monorepo root with `web` as the app root).
+2. Framework preset: Next.js
+3. Build command: `npm run build`
+4. Output: Next.js default
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customize before traffic
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Edit `src/config/site.ts`:
 
-## Deploy on Vercel
+- `formEndpoint` — Formspree / HubSpot / Tally endpoint
+- `calendarUrl` — Cal.com / Calendly link
+- `email` — public contact email
+- CTA labels / brand strings if needed
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Form submission lives in `src/components/LeadForm.tsx`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project structure
+
+```text
+web/
+  src/
+    app/                 # layout, page, global styles
+    components/          # shared UI + section components
+    config/site.ts       # brand + CTA + endpoint placeholders
+    lib/utils.ts
+```
+
+## Related docs
+
+Offer source of truth lives one level up:
+
+- `../Company-Brain-SOP-Agent-Offer-Brief.md`
+- `../Grok-4.5-Company-Brain-Landing-Page-Prompt.md`
