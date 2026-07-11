@@ -1,26 +1,165 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Hermes / Strohm Partners design system */
+  --bg: #030508;
+  --bg-muted: #080d14;
+  --bg-dark: #0c1219;
+  --surface: #0c1219;
+  --surface-raised: #111a24;
+  --surface-glass: rgba(12, 18, 25, 0.72);
+  --ink: #f0f4f8;
+  --ink-muted: #7b8fa3;
+  --ink-soft: #cbd5e1;
+  --ink-faint: #7b8fa3;
+  --ink-on-dark: #f0f4f8;
+  --accent: #c9a962;
+  --accent-hover: #e8d5a8;
+  --accent-deep: #a88b4a;
+  --accent-ink: #030508;
+  --accent-soft: rgba(201, 169, 98, 0.14);
+  --accent-glow: rgba(201, 169, 98, 0.35);
+  --cyan: #22d3ee;
+  --cyan-dark: #0891b2;
+  --cyan-soft: rgba(34, 211, 238, 0.12);
+  --cyan-glow: rgba(34, 211, 238, 0.25);
+  --success: #34d399;
+  --border: rgba(148, 163, 184, 0.12);
+  --border-strong: rgba(201, 169, 98, 0.25);
+  --shadow-soft: 0 16px 48px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 32px 80px rgba(0, 0, 0, 0.55);
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+::selection {
+  background: rgba(201, 169, 98, 0.28);
+  color: var(--ink);
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+/* Ambient page atmosphere (Hermes-style) */
+.ambient {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 70%);
+  opacity: 0.55;
+}
+
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.ambient-glow--gold {
+  top: -8%;
+  right: 8%;
+  width: min(42vw, 520px);
+  height: min(42vw, 520px);
+  background: radial-gradient(circle, rgba(201, 169, 98, 0.22), transparent 70%);
+}
+
+.ambient-glow--cyan {
+  top: 28%;
+  left: -6%;
+  width: min(38vw, 460px);
+  height: min(38vw, 460px);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.12), transparent 70%);
+}
+
+.page-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 12px var(--success);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot {
+    animation: none;
+  }
 }
